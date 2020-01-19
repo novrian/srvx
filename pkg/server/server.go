@@ -1,4 +1,9 @@
-package srvx
+package server
+
+import (
+	"fmt"
+	"strconv"
+)
 
 type Server struct {
 	Name               string
@@ -30,7 +35,7 @@ func (srvx *Server) Label() string {
 func (server *Server) GenerateArgs() []string {
 	host := server.Host
 	if server.Port != 0 {
-		host += ":" + server.Port
+		host += ":" + strconv.Itoa(server.Port)
 	}
 	return []string{""}
 }
